@@ -18,7 +18,7 @@
         bg-gradient-to-r from-gray-500 to-gray-100
         flex items-center justify-center 
         text-purple-600 font-bold text-xl mr-3" >
-           P 
+           N 
         </div>
 
         <span className="text-xl font-bold bg-gradient-to-r from-gray-300 
