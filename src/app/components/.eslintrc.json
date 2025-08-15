@@ -1,0 +1,14 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:react/recommended"],
+  "rules": {
+    "react/no-unescaped-entities": "error"
+  },
+  "overrides": [
+    {
+      "files": ["prisma/generated/**/*.js", "src/generated/**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-require-imports": "off"
+      }
+    }
+  ]
+}
