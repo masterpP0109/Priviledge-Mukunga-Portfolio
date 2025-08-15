@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { FiGithub, FiLinkedin, FiMenu, FiX } from "react-icons/fi"
 import { FaWhatsapp, FaFacebook } from "react-icons/fa"
+import Image from "next/image";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,7 +20,9 @@ const Header = () => {
       
       {/* Logo */}
       <div className="flex items-center">
-        <img src="/img/miladicode.png" alt="logo" className="w-[40px] mr-[15px]" />
+       
+        <Image></Image>
+        
         <h1 className="text-white text-xl md:text-1xl lg:text-2xl">
           <span className="gradient">Priviledge</span> Mukunga
         </h1>
@@ -52,7 +55,7 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.3, duration: 0.8 }}
-            className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-300"
+            className="text-gray-300 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-300"
             href="https://github.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -63,7 +66,7 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.4, duration: 0.8 }}
-            className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-300"
+            className="text-gray-300 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors duration-300"
             href="https://linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -74,7 +77,7 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="text-green-500 hover:text-green-400 transition-colors duration-300"
+            className="text-gray-300 hover:text-green-400 transition-colors duration-300"
             href="https://wa.me/1234567890"
             target="_blank"
             rel="noopener noreferrer"
@@ -85,7 +88,7 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.6, duration: 0.8 }}
-            className="text-blue-600 hover:text-blue-500 transition-colors duration-300"
+            className="text-gray-300 hover:text-blue-500 transition-colors duration-300"
             href="https://facebook.com/"
             target="_blank"
             rel="noopener noreferrer"

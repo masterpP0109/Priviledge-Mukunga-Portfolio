@@ -67,9 +67,9 @@ const HeroSection = () => {
 
           {/* Right Section  */}
           <div className="absolute xl:right-[-15%] right-0 top-[10%] z-50 w-[90vw] h-[90vh]">
-           {/*  <Spline
+             <Spline
               scene="https://prod.spline.design/yG6wUtpy0YjmnUF7/scene.splinecode" 
-            /> */}
+            /> 
           </div>
 
        <div className="scroll-down">

@@ -8,11 +8,13 @@ import { SlShareAlt } from "react-icons/sl";
 
 // Project Images data (replace with your actual images)
 const projectImages = [
-  { id: 1, title: "Gaming Site", imageSrc: "/images/gaming.jpg" },
-  { id: 2, title: "Movie Website", imageSrc: "/images/movies.jpg" },
-  { id: 3, title: "Baobab Primary School Website", imageSrc: "/images/baobab.jpg" },
-  { id: 4, title: "Inventory Management System", imageSrc: "/images/inventory.jpg" },
+  { id: 1, title: "Gaming Site", imageSrc: "/images/project-1.png" },
+  { id: 2, title: "Movie Website", imageSrc: "/images/project-3.png" },
+  { id: 3, title: "Baobab Primary School Website", imageSrc: "/images/project-4.png" },
+  { id: 4, title: "Inventory Management System", imageSrc: "/images/project-1.png" },
+   { id: 5, title: " Management ", imageSrc: "/images/project-3.png" },
 ];
+
 
 const ProjectsSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -154,7 +156,7 @@ const ProjectsSection = () => {
       className="relative py-20 mt-[30vh] bg-[#f6f6f6] overflow-hidden"
     >
       {/* Section Title */}
-      <div className="container mx-auto px-4 mb-16 relative z-10">
+      <div className="container mx-auto px-4 mb-8 relative z-10">
         <h2
           ref={titleRef}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-black text-center mb-4 opacity-0"
@@ -169,7 +171,7 @@ const ProjectsSection = () => {
 
       {/* Horizontal Scroll Section */}
       <div ref={triggerRef} className="overflow-hidden opacity-0">
-        <div ref={horizontalRef} className="horizontal-section flex md:w-[400%] w-[420%]">
+        <div ref={horizontalRef} className="horizontal-section flex md:w-[300%] w-[320%]">
           {projectImages.map((project) => (
             <div key={project.id} className="panel relative flex items-center justify-center">
               <div className="relative w-full h-full flex flex-col items-center justify-center p-4 sm:p-8 md:p-12">
