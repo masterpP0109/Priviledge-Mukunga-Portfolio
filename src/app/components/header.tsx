@@ -20,9 +20,13 @@ const Header = () => {
       
       {/* Logo */}
       <div className="flex items-center">
-       
-        <Image></Image>
-        
+        <Image
+          src="/logo.png" // Update this path to your actual logo if needed
+          alt="Priviledge Mukunga Logo"
+          width={40}
+          height={40}
+          className="mr-2 rounded-full"
+        />
         <h1 className="text-white text-xl md:text-1xl lg:text-2xl">
           <span className="gradient">Priviledge</span> Mukunga
         </h1>
