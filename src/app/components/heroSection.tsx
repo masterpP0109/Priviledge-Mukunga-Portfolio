@@ -5,18 +5,19 @@ import Spline from "@splinetool/react-spline"
 import { FiSend } from "react-icons/fi"
 import { FiDownload } from "react-icons/fi"
 import { FiCode  } from "react-icons/fi"
+import Image from "next/image";
 import {  FaGem  } from "react-icons/fa"
 import Header from "../components/header";
 
 const HeroSection = () => {
   return (
     <section className=" h-screen bg-gradient-to-t from-[#9a74cf50] to-black
-    flex xl:flex-row flex-col-reverse items-center justify-between
+    flex xl:flex-row flex-col-reverse items-center justify-between 
     lg:px-24 px-10 relative ">
        <Header/>
       
         {/* Left Section  */}
-         <div className="absolute left-[5%] xl:mb-0 mb-[20%] z-40">
+         <div className="absolute left-[5%] lg:mb-0 mb-[30vh]  md:mb-[50vh] z-40">
             <div className="relative flex items-center justify-center w-[50%]">
               <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#727fde] opacity-20 text-[60px] pointer-events-none z-0">
                 <FiCode />
@@ -67,12 +68,14 @@ const HeroSection = () => {
 
           {/* Right Section  */}
           <div className="absolute xl:right-[-15%] right-0 top-[10%] z-50 w-[90vw] h-[90vh]">
-             <Spline
+            {/* <Spline
               scene="https://prod.spline.design/yG6wUtpy0YjmnUF7/scene.splinecode" 
-            /> 
+            /> */} 
+
+          
           </div>
 
-       <div className="scroll-down">
+       <div className="scroll-down  ">
        
     </div>
     </section>

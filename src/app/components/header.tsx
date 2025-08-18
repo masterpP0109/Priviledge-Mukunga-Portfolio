@@ -21,7 +21,7 @@ const Header = () => {
       {/* Logo */}
       <div className="flex items-center">
         <Image
-          src="/logo.png" // Update this path to your actual logo if needed
+          src="/images/prinor-high-resolution-logo.png"
           alt="Priviledge Mukunga Logo"
           width={40}
           height={40}

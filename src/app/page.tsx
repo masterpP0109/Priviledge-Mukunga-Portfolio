@@ -10,6 +10,10 @@ import HeroSection from "./components/heroSection";
 import AboutSection from "./components/about"
 import ProjectsSection  from "./components/projectsSection"
 import ContactSection from "./components/contactSection";
+import Footer from "./components/footerSection";
+import SplashCursor from "./components/splashCursor";
+
+
 
 export default function Home() {
 
@@ -33,6 +37,8 @@ export default function Home() {
    <AboutSection/>
    <ProjectsSection/>
    <ContactSection/>
+   <Footer/>
+  <SplashCursor />
    </>
   );
 }

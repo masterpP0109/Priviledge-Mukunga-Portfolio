@@ -85,7 +85,7 @@ const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen my-auto relative bg-gradient-to-b from-[#9a74cf50] to-black"
+      className="h-screen  my-auto relative bg-gradient-to-b from-[#9a74cf50]  to-black"
     >
       <div
       
@@ -117,9 +117,9 @@ const AboutSection = () => {
         </h1>
       </div>
 
-      <section className="absolute lg:bottom-[-10rem] md:bottom-[-5rem] bottom-[-10rem] 
+      <section className="absolute lg:bottom-[-10rem] md:bottom-[-10rem] bottom-[-10rem] 
       left-0 w-full flex md:flex-col justify-between items-center lg:px-24 px-5">
-        <div className="grid grid-cols-[auto_auto_auto] gap-[20px] w-full h-full ">
+        <div className="grid relative grid-cols-[auto_auto_auto] md:grid-cols-2 lg:grid-cols-3   gap-6 w-full h-full ">
           {/* Card 1 */}
           <div className="relative flex items-start justify-center h-[40vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
             <h1 className="absolute bottom-[40%] left-[5%] text-[25px] text-lightgrey z-10">Hi there, I’m Priviledge</h1>
@@ -135,7 +135,7 @@ const AboutSection = () => {
           </div>
 
           {/* Card 3 - spans 2 rows */}
-          <div className="relative flex items-start justify-center row-span-2 h-[83vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
+          <div className="relative flex items-start justify-center row-span-2 card  h-[83vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
             <h1 className="absolute bottom-[40%] left-[5%] text-[25px] text-lightgrey z-10">Creative Projects</h1>
             <p className="absolute bottom-[12%] left-[5%] text-[13px] text-gray-400 leading-[20px] max-w-[400px] z-10">Explore my portfolio of creative web projects, each crafted with attention to detail and innovation.</p>
             <video

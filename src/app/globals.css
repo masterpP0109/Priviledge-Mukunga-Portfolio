@@ -93,3 +93,27 @@ body {
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 900px) {
+
+  .info-cards {
+    grid-template-columns: auto;
+  }
+  .card:nth-child(3) {
+    grid-column: span 2;
+    height: 70vh;
+  }
+
+  .card:nth-child(3) h1 {
+    bottom: 25%;
+  }
+
+  .card video {
+    height: 65%;
+    margin-top: 5%;
+  }
+
+  .scroll-down {
+    bottom: 43%;
+  }
+}

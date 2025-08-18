@@ -6,10 +6,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const ContactSection = () => {
   // Main refs
-  const circleRef = useRef<HTMLDivElement | null>(null);
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const initialTextRef = useRef<HTMLParagraphElement | null>(null);
-  const finalTextRef = useRef<HTMLDivElement | null>(null);
+  const circleRef = useRef(null);
+  const sectionRef = useRef(null);
+  const initialTextRef = useRef(null);
+  const finalTextRef = useRef(null);
 
   useEffect(() => {
     // Register Gsap
@@ -25,7 +25,7 @@ const ContactSection = () => {
 
     cleanup();
 
-    gsap.set(circleRef.current, { scale: 1, backgroundColor: "white" });
+    gsap.set(circleRef.current, { scale: 1, backgroundColor: "transparent" });
     gsap.set(initialTextRef.current, { opacity: 1 });
     gsap.set(finalTextRef.current, { opacity: 0 });
 
@@ -41,7 +41,7 @@ const ContactSection = () => {
         preventOverlaps: true,
         invalidateOnRefresh: true,
       },
-    });
+    })
 
     tl.to(
       circleRef.current,
@@ -51,8 +51,8 @@ const ContactSection = () => {
         ease: "power1.inOut",
         duration: 0.5,
       },
-      0
-    );
+      0,
+    )
 
     tl.to(
       initialTextRef.current,
@@ -61,20 +61,21 @@ const ContactSection = () => {
         ease: "power1.out",
         duration: 0.2,
       },
-      0.1
-    );
+      0.1,
+    )
 
     tl.to(
       circleRef.current,
       {
-        scale: 17,
+        scale: 18,
         backgroundColor: "#E9D5FF",
         boxShadow: "0 0 50px 20px rgba(233, 213, 255, 0.3)",
         ease: "power2.inOut",
         duration: 0.5,
+       
       },
-      0.5
-    );
+      0.5,
+    )
 
     tl.to(
       finalTextRef.current,
@@ -83,8 +84,8 @@ const ContactSection = () => {
         ease: "power2.in",
         duration: 0.2,
       },
-      0.7
-    );
+      0.8,
+    )
 
     return cleanup;
   }, []);
@@ -92,14 +93,15 @@ const ContactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex items-center justify-center bg-black relative"
+      className="flex items-center justify-center h-[130vh] bg-black relative overflow-hidden "
       style={{ overscrollBehavior: "none" }} 
     >
       <div
         ref={circleRef}
         className="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32
           rounded-full flex items-center justify-center relative transition-shadow
-          duration-1000 shadow-violet-300/50 shadow-lg bg-gradient-to-r from-violet-400 to-pink-100"
+          duration-1000 shadow-violet-300/50 shadow-lg bg-gradient-to-r from-violet-400
+           to-pink-100"
       >
         <p
           ref={initialTextRef}
@@ -115,9 +117,9 @@ const ContactSection = () => {
             justify-center opacity-0"
         >
           <h1
-            className="text-black md:w-[10rem] w-[20rem] lg:scale-[0.4] 
+            className="text-black md:w-[10rem] w-[20rem] lg:scale-[0.3] 
               sm:scale-[0.25] scale-[0.07] md:font-bold text-sm
-              sm:text-base leading-none mb-5"
+              sm:text-base leading-none mb-3"
           >
             Step Into the Future with Privilege
           </h1>
