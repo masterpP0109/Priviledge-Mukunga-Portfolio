@@ -1,23 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Spline from "@splinetool/react-spline"
+ import Spline from "@splinetool/react-spline"
 import { FiSend } from "react-icons/fi"
 import { FiDownload } from "react-icons/fi"
 import { FiCode  } from "react-icons/fi"
-import Image from "next/image";
+// import Image from "next/image";
 import {  FaGem  } from "react-icons/fa"
 import Header from "../components/header";
 
 const HeroSection = () => {
   return (
-    <section className=" h-screen bg-gradient-to-t from-[#9a74cf50] to-black
-    flex xl:flex-row flex-col-reverse items-center justify-between 
+    <section className="min-h-screen bg-gradient-to-t from-[#9a74cf50] to-black
+    flex lg:flex-row flex-col-reverse items-center justify-between 
     lg:px-24 px-10 relative ">
        <Header/>
       
         {/* Left Section  */}
-         <div className="absolute left-[5%] lg:mb-0 mb-[30vh]  md:mb-[50vh] z-40">
+         <div className="relative z-40 w-full xl:w-1/2 lg:w-1/2 lg:mb-0 mb-20">
             <div className="relative flex items-center justify-center w-[50%]">
               <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#727fde] opacity-20 text-[60px] pointer-events-none z-0">
                 <FiCode />
@@ -53,7 +53,7 @@ const HeroSection = () => {
                 duration: 1.5,
             }}className="max-w-[550px] leading-[25px] text-md 
             md:text-lg lg:text-xl  mb-[40px]">
-              I’m a Full stack developer specializing in building modern, responsive web applications. I love creating seamless user experiences and solving complex problems with clean, efficient code. Let's work together to bring your ideas to life!
+              I&apos;m a Full stack developer specializing in building modern, responsive web applications. I love creating seamless user experiences and solving complex problems with clean, efficient code. Let&apos;s work together to bring your ideas to life!
             </motion.p>
             
             <div className="flex flex-row  gap-4 mt-2">
@@ -67,10 +67,10 @@ const HeroSection = () => {
           </div>
 
           {/* Right Section  */}
-          <div className="absolute xl:right-[-15%] right-0 top-[10%] z-50 w-[90vw] h-[90vh]">
-            {/* <Spline
+          <div className="relative z-50 w-full left-[-2em] top-[-5em] xl:w-1/2 lg:w-1/2 h-[40vh] lg:h-[130vh]">
+             <Spline
               scene="https://prod.spline.design/yG6wUtpy0YjmnUF7/scene.splinecode" 
-            /> */} 
+            />  
 
           
           </div>

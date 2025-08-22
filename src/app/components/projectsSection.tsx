@@ -153,7 +153,7 @@ const ProjectsSection = () => {
     <section
       ref={sectionRef}
       id="horizontal-section"
-      className="relative py-20 mt-[30vh] bg-[#f6f6f6] overflow-hidden"
+      className="relative py-12 md:py-16 mt-24 md:mt-40 bg-[#f6f6f6] overflow-hidden"
     >
       {/* Section Title */}
       <div className="container mx-auto px-4 mb-8 relative z-10">
@@ -171,19 +171,19 @@ const ProjectsSection = () => {
 
       {/* Horizontal Scroll Section */}
       <div ref={triggerRef} className="overflow-hidden opacity-0">
-        <div ref={horizontalRef} className="horizontal-section flex md:w-[300%] w-[320%]">
+        <div ref={horizontalRef} className="horizontal-section flex w-fit">
           {projectImages.map((project) => (
-            <div key={project.id} className="panel relative flex items-center justify-center">
-              <div className="relative w-full h-full flex flex-col items-center justify-center p-4 sm:p-8 md:p-12">
+            <div key={project.id} className="panel relative flex items-center justify-center min-w-[100vw] h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh]">
+              <div className="relative w-full h-full flex flex-col items-center justify-center p-4 sm:p-6 md:p-10 lg:p-12 max-w-[1200px] mx-auto text-center">
                 <Image
-                  className="project-image max-w-full max-h-full rounded-2xl object-cover"
+                  className="project-image rounded-2xl object-cover w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] h-auto mx-auto"
                   src={project.imageSrc}
                   alt={project.title}
                   width={500}
                   height={300}
                   loading="lazy"
                 />
-                <h2 className="project-title flex items-center gap-3 md:text-3xl text-sm md:font-bold text-black mt-6 z-50 text-nowrap hover:text-gray-400 transition-colors duration-300 cursor-pointer">
+                <h2 className="project-title flex items-center justify-center gap-3 text-base sm:text-lg md:text-2xl lg:text-3xl md:font-bold text-black mt-6 z-50 hover:text-gray-400 transition-colors duration-300 cursor-pointer text-center">
                   {project.title} <SlShareAlt />
                 </h2>
               </div>

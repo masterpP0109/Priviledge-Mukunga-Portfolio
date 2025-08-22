@@ -9,40 +9,24 @@ import { FiExternalLink } from "react-icons/fi"
 const AboutSection = () => {
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
-  const introRef = useRef(null)
   const starsRef = useRef<HTMLDivElement[]>([])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
+    const sectionEl = sectionRef.current
 
-    // Title Animation
+    // Title Animation - smoother fade-up
     gsap.fromTo(
       titleRef.current,
-      { y: 100, opacity: 0 },
+      { y: 30, opacity: 0 },
       {
-        y: -300,
+        y: 0,
         opacity: 1,
         duration: 0.8,
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 40%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    )
-
-    // Intro Animation
-    gsap.fromTo(
-      introRef.current,
-      { y: 100, opacity: 0, filter: "blur(10px)" },
-      {
-        y: -400,
-        opacity: 1,
-        filter: "blur(0px)",
-        duration: 1.5,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 40%",
+          trigger: sectionEl,
+          start: "top 70%",
           toggleActions: "play none none reverse",
         },
       }
@@ -59,7 +43,7 @@ const AboutSection = () => {
         rotation: direction * 360,
         ease: "none",
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: sectionEl,
           start: "top bottom",
           end: "bottom top",
           scrub: speed,
@@ -69,7 +53,7 @@ const AboutSection = () => {
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === sectionRef.current) {
+        if (trigger.vars.trigger === sectionEl) {
           trigger.kill()
         }
       })
@@ -85,7 +69,7 @@ const AboutSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen  my-auto relative bg-gradient-to-b from-[#9a74cf50]  to-black"
+      className="relative bg-gradient-to-b from-[#9a74cf50] to-black py-24 md:py-32"
     >
       <div
       
@@ -108,7 +92,7 @@ const AboutSection = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 h-full flex flex-col items-center justify-center relative z-10">
         <h1
           ref={titleRef}
           className="text-4xl md:text-6xl font-bold sm:mb-16 text-center text-white"
@@ -117,9 +101,8 @@ const AboutSection = () => {
         </h1>
       </div>
 
-      <section className="absolute lg:bottom-[-10rem] md:bottom-[-10rem] bottom-[-10rem] 
-      left-0 w-full flex md:flex-col justify-between items-center lg:px-24 px-5">
-        <div className="grid relative grid-cols-[auto_auto_auto] md:grid-cols-2 lg:grid-cols-3   gap-6 w-full h-full ">
+      <div className="relative w-full flex flex-col justify-between items-center lg:px-24 px-5 mt-10 md:mt-16 lg:mt-20 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full h-full ">
           {/* Card 1 */}
           <div className="relative flex items-start justify-center h-[40vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
             <h1 className="absolute bottom-[40%] left-[5%] text-[25px] text-lightgrey z-10">Hi there, I’m Priviledge</h1>
@@ -134,8 +117,8 @@ const AboutSection = () => {
             <Image src="/images/grid2.png" alt="Developer" width={300} height={200} className="w-4/5 h-1/2 object-cover" />
           </div>
 
-          {/* Card 3 - spans 2 rows */}
-          <div className="relative flex items-start justify-center row-span-2 card  h-[83vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
+          {/* Card 3 - spans 2 rows on large screens */}
+          <div className="relative flex items-start justify-center lg:row-span-2 card h-[83vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
             <h1 className="absolute bottom-[40%] left-[5%] text-[25px] text-lightgrey z-10">Creative Projects</h1>
             <p className="absolute bottom-[12%] left-[5%] text-[13px] text-gray-400 leading-[20px] max-w-[400px] z-10">Explore my portfolio of creative web projects, each crafted with attention to detail and innovation.</p>
             <video
@@ -169,7 +152,7 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   )
 }

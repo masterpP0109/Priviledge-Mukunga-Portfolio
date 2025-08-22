@@ -15,8 +15,8 @@ const Header = () => {
   const closeContactForm = () => setContactFormOpen(false)
 
   return (
-    <header className="absolute inset-x-0 top-0 h-[70px] flex items-center justify-between 
-      px-[30px] bg-transparent bg-opacity-50 backdrop-blur-md shadow-[0_0_15px_rgba(114,161,222,0.41)] z-[999]">
+    <header className="fixed inset-x-0 top-0 h-[70px] flex items-center justify-between 
+      px-[30px] bg-transparent bg-opacity-50 backdrop-blur-md shadow-[0_0_15px_rgba(114,161,222,0.41)] z-[50]">
       
       {/* Logo */}
       <div className="flex items-center">

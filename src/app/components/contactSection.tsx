@@ -93,7 +93,7 @@ const ContactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex items-center justify-center h-[130vh] bg-black relative overflow-hidden "
+      className="flex items-center justify-center min-h-[120vh] bg-black relative overflow-hidden mt-24 md:mt-40"
       style={{ overscrollBehavior: "none" }} 
     >
       <div

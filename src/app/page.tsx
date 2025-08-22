@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect } from  "react";
+import { useEffect } from  "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -12,6 +12,7 @@ import ProjectsSection  from "./components/projectsSection"
 import ContactSection from "./components/contactSection";
 import Footer from "./components/footerSection";
 import SplashCursor from "./components/splashCursor";
+import ProgresBar from "./components/progresBar";
 
 
 
@@ -39,6 +40,7 @@ export default function Home() {
    <ContactSection/>
    <Footer/>
   <SplashCursor />
+  <ProgresBar/>
    </>
   );
 }
