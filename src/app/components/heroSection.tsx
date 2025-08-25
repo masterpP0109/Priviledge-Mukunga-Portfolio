@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
- import Spline from "@splinetool/react-spline"
+// import Spline from "@splinetool/react-spline"
 import { FiSend } from "react-icons/fi"
 import { FiDownload } from "react-icons/fi"
 import { FiCode  } from "react-icons/fi"
@@ -67,8 +67,8 @@ const HeroSection = () => {
           </div>
 
           {/* Right Section  */}
-          <div className="relative z-50 w-full left-[-2em] top-[-5em] xl:w-1/2 lg:w-1/2 h-[40vh] lg:h-[130vh]">
-            {/*  <Spline
+          <div className="absolute xl:right-[-15%] right-0 top-[10%] z-50 w-[90vw] h-[90vh]">
+            {/* <Spline
               scene="https://prod.spline.design/yG6wUtpy0YjmnUF7/scene.splinecode" 
             />  */}
 

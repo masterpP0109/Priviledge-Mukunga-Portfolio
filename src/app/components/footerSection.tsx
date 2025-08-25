@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto"  >
         
         <div className=" flex justify-between items-center  " >
-          <h2 text-3xl font-bold bg-gradient-to-r from-purple-400 
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 
           to-purple-200 bg-clip-text 
-          text-transparent >
+          text-transparent">
             Priviledge
           </h2>
 

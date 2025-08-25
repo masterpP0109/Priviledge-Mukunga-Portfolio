@@ -17,18 +17,17 @@ const SliderSection = () => {
 
   return (
    
-    <div className="slider absolute bottom-[5%] right-[20%] w-[60%] h-[var(--height)] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] mix-blend-difference opacity-80">
-       <div className="list">
+    <div className="slider relative w-full py-6 overflow-x-auto [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] mix-blend-difference opacity-80">
+       <div className="list flex flex-nowrap items-center gap-6 w-max">
           {images.map((imageSrc, index) => (
             <div
               key={imageSrc}
-              className="item"
-              style={{position:'relative', left:`${index * 100}px` }}
+              className="item shrink-0"
             >
               <Image src={imageSrc}
               alt={`Slide ${index + 1}`}
-              width={500}
-              height={500}
+              width={300}
+              height={300}
               />
             </div>
           ))}
