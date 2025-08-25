@@ -6,6 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-16 px-6 mt-24 md:mt-40" >
       <div className="max-w-6xl mx-auto"  >
+        
         <div className=" flex justify-between items-center  " >
           <h2 text-3xl font-bold bg-gradient-to-r from-purple-400 
           to-purple-200 bg-clip-text 

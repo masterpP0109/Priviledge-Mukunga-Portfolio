@@ -13,6 +13,7 @@ import ContactSection from "./components/contactSection";
 import Footer from "./components/footerSection";
 import SplashCursor from "./components/splashCursor";
 import ProgresBar from "./components/progresBar";
+import SliderSection from "./components/sliderSection";
 
 
 
@@ -38,6 +39,7 @@ export default function Home() {
    <AboutSection/>
    <ProjectsSection/>
    <ContactSection/>
+   <SliderSection/>
    <Footer/>
   <SplashCursor />
   <ProgresBar/>
