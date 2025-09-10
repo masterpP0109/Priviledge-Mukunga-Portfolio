@@ -1,21 +1,29 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Image from 'next/image'
 import { FiExternalLink } from "react-icons/fi"
 
+interface Star {
+  size: number
+  top: string
+  left: string
+  opacity: number
+}
+
 const AboutSection = () => {
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
   const starsRef = useRef<HTMLDivElement[]>([])
+  const [stars, setStars] = useState<Star[]>([])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     const sectionEl = sectionRef.current
 
-    // Title Animation - smoother fade-up
+    // Title Animation
     gsap.fromTo(
       titleRef.current,
       { y: 30, opacity: 0 },
@@ -58,9 +66,20 @@ const AboutSection = () => {
         }
       })
     }
+  }, [stars])
+
+  useEffect(() => {
+    // Generate stars only on client (prevents hydration mismatch)
+    const generatedStars: Star[] = Array.from({ length: 10 }, (_, i) => ({
+      size: 10 + i * 3,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      opacity: 0.2 + Math.random() * 0.4,
+    }))
+    setStars(generatedStars)
   }, [])
 
-  const addToStars = (el : HTMLDivElement | null) => {
+  const addToStars = (el: HTMLDivElement | null) => {
     if (el && !starsRef.current.includes(el)) {
       starsRef.current.push(el)
     }
@@ -71,22 +90,19 @@ const AboutSection = () => {
       ref={sectionRef}
       className="relative bg-gradient-to-b from-[#9a74cf50] to-black py-24 md:py-32"
     >
-      <div
-      
-      className="absolute inset-0 overflow-hidden top-15">
-        {/* stars */}
-        {[...Array(10)].map((_, i) => (
+      {/* Stars */}
+      <div className="absolute inset-0 overflow-hidden top-15">
+        {stars.map((star, i) => (
           <div
             key={`star-${i}`}
-            className="absolute rounded-full"
+            className="absolute rounded-full bg-white"
             ref={addToStars}
             style={{
-              width: `${10 + i * 3}px`,
-              height: `${10 + i * 3}px`,
-              backgroundColor: "white",
-              opacity: 0.2 + Math.random() * 0.4,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              top: star.top,
+              left: star.left,
+              opacity: star.opacity,
             }}
           />
         ))}
@@ -117,7 +133,7 @@ const AboutSection = () => {
             <Image src="/images/grid2.png" alt="Developer" width={300} height={200} className="w-4/5 h-1/2 object-cover" />
           </div>
 
-          {/* Card 3 - spans 2 rows on large screens */}
+          {/* Card 3 */}
           <div className="relative flex items-start justify-center lg:row-span-2 card h-[83vh] border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
             <h1 className="absolute bottom-[40%] left-[5%] text-[25px] text-lightgrey z-10">Creative Projects</h1>
             <p className="absolute bottom-[12%] left-[5%] text-[13px] text-gray-400 leading-[20px] max-w-[400px] z-10">Explore my portfolio of creative web projects, each crafted with attention to detail and innovation.</p>
@@ -136,7 +152,7 @@ const AboutSection = () => {
             </button>
           </div>
 
-          {/* Card 4 - spans 2 columns */}
+          {/* Card 4 */}
           <div className="relative flex items-center justify-center col-span-2 h-[40vh] w-full border border-gray-500 bg-[#080020b7] rounded-[20px] transition-shadow duration-500 hover:shadow-[0_0_15px_rgba(211,211,211,0.5)]">
             <h1 className="absolute bottom-[35%] left-[5%] text-[25px] text-lightgrey z-10">My Passion for Coding</h1>
             <p className="absolute bottom-[3%] left-[5%] text-[13px] text-gray-400 leading-[20px] max-w-[650px] z-10">

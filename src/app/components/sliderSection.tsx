@@ -17,7 +17,8 @@ const SliderSection = () => {
 
   return (
    
-    <div className="slider relative w-full py-6 overflow-x-auto [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] mix-blend-difference opacity-80">
+    <div className="slider flex items-center mt-[5%] ml-[20%] justify-center  w-[60%] h-[var(--height)] overflow-hidden 
+    [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] mix-blend-difference opacity-80">
        <div className="list flex flex-nowrap items-center gap-6 w-max">
           {images.map((imageSrc, index) => (
             <div
@@ -26,8 +27,8 @@ const SliderSection = () => {
             >
               <Image src={imageSrc}
               alt={`Slide ${index + 1}`}
-              width={300}
-              height={300}
+              width={70}
+              height={70}
               />
             </div>
           ))}

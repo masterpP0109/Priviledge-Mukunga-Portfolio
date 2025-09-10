@@ -12,20 +12,9 @@ const ContactSection = () => {
   const finalTextRef = useRef(null);
 
   useEffect(() => {
-    // Register Gsap
+    // Register GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-    const cleanup = () => {
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.vars.trigger === sectionRef.current) {
-          st.kill(true);
-        }
-      });
-    };
-
-    cleanup();
-
-    gsap.set(circleRef.current, { scale: 1, backgroundColor: "transparent" });
     gsap.set(initialTextRef.current, { opacity: 1 });
     gsap.set(finalTextRef.current, { opacity: 0 });
 
@@ -41,7 +30,7 @@ const ContactSection = () => {
         preventOverlaps: true,
         invalidateOnRefresh: true,
       },
-    })
+    });
 
     tl.to(
       circleRef.current,
@@ -51,8 +40,8 @@ const ContactSection = () => {
         ease: "power1.inOut",
         duration: 0.5,
       },
-      0,
-    )
+      0
+    );
 
     tl.to(
       initialTextRef.current,
@@ -61,8 +50,8 @@ const ContactSection = () => {
         ease: "power1.out",
         duration: 0.2,
       },
-      0.1,
-    )
+      0.1
+    );
 
     tl.to(
       circleRef.current,
@@ -72,10 +61,9 @@ const ContactSection = () => {
         boxShadow: "0 0 50px 20px rgba(233, 213, 255, 0.3)",
         ease: "power2.inOut",
         duration: 0.5,
-       
       },
-      0.5,
-    )
+      0.5
+    );
 
     tl.to(
       finalTextRef.current,
@@ -84,17 +72,19 @@ const ContactSection = () => {
         ease: "power2.in",
         duration: 0.2,
       },
-      0.8,
-    )
+      0.8
+    );
 
-    return cleanup;
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
       className="flex items-center justify-center min-h-[120vh] bg-black relative overflow-hidden mt-24 md:mt-40"
-      style={{ overscrollBehavior: "none" }} 
+      style={{ overscrollBehavior: "none" }}
     >
       <div
         ref={circleRef}
@@ -129,13 +119,18 @@ const ContactSection = () => {
               sm:mt-3 mt-3 md:scale-[0.1] scale-[0.068]"
           >
             Full-stack developer specialized in crafting modern,
-            responsive web interfaces
+            responsive web interfaces. I love transforming complex
+            ideas into smooth, user-friendly digital experiences
+            that bring real value to people’s lives. Whether it’s
+            designing a polished UI, building robust backend APIs,
+            or integrating the latest web technologies, my mission
+            is to create products that inspire and empower users.
           </p>
 
           <button
             className="px-10 py-2 rounded-xl bg-black 
               hover:bg-white hover:text-black transition-all duration-500
-              scale-[0.1] absolute sm:mt-9 mt-7 text-nowrap"
+              scale-[0.08] absolute sm:mt-9 mt-7 text-nowrap"
           >
             Contact Me
           </button>
